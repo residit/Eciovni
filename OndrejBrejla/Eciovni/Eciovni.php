@@ -124,7 +124,7 @@ class Eciovni extends Control {
      */
     private function generate(ITemplate $template) {
         $template->setFile($this->templatePath);
-        $template->registerHelper('round', function($value, $precision = 2) {
+        $template->getLatte()->addFilter('round', function($value, $precision = 2) {
             return number_format(round($value, $precision), $precision, ',', '');
         });
 
