@@ -2,8 +2,6 @@
 
 namespace OndrejBrejla\Eciovni;
 
-use Nette\Object;
-
 /**
  * ParticipantBuilder - part of Eciovni plugin for Nette Framework.
  *
@@ -11,7 +9,8 @@ use Nette\Object;
  * @license    New BSD License
  * @link       http://github.com/OndrejBrejla/Eciovni
  */
-class ParticipantBuilder extends Object {
+class ParticipantBuilder
+{
 
     /** @var string */
     private $name;

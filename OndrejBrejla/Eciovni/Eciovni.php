@@ -217,7 +217,7 @@ class Eciovni extends Control {
      */
     private function countFinalUntaxedValue() {
         $sum = 0;
-        foreach ($this->data->items as $item) {
+        foreach ($this->data->getItems() as $item) {
             $sum += $item->countUntaxedUnitValue() * $item->getUnits();
         }
         return $sum;
@@ -230,7 +230,7 @@ class Eciovni extends Control {
      */
     private function countFinalTaxValue() {
         $sum = 0;
-        foreach ($this->data->items as $item) {
+        foreach ($this->data->getItems() as $item) {
             $sum += $item->countTaxValue();
         }
         return $sum;
@@ -243,7 +243,7 @@ class Eciovni extends Control {
      */
     private function countFinalValues() {
         $sum = 0;
-        foreach ($this->data->items as $item) {
+        foreach ($this->data->getItems() as $item) {
             $sum += $item->countFinalValue();
         }
         return $sum;

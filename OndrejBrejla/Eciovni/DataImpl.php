@@ -2,7 +2,6 @@
 
 namespace OndrejBrejla\Eciovni;
 
-use Nette\Object;
 use DateTime;
 
 /**
@@ -12,7 +11,8 @@ use DateTime;
  * @license    New BSD License
  * @link       http://github.com/OndrejBrejla/Eciovni
  */
-class DataImpl extends Object implements Data {
+class DataImpl implements Data
+{
 
     /** @var string */
     private $title;

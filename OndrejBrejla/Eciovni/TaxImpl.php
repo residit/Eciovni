@@ -2,7 +2,6 @@
 
 namespace OndrejBrejla\Eciovni;
 
-use Nette\Object;
 use InvalidArgumentException;
 
 /**
@@ -12,7 +11,8 @@ use InvalidArgumentException;
  * @license    New BSD License
  * @link       http://github.com/OndrejBrejla/Eciovni
  */
-class TaxImpl extends Object implements Tax {
+class TaxImpl implements Tax
+{
 
     /** @var double */
     private $taxInUpperDecimal;
