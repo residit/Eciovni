@@ -27,6 +27,8 @@ class Eciovni extends Control {
      * @param Data $data
      */
     public function __construct(Data $data = NULL) {
+    	parent::__construct();
+
         if ($data !== NULL) {
             $this->setData($data);
         }
