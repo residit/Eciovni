@@ -2,11 +2,9 @@
 
 namespace OndrejBrejla\Eciovni;
 
-
-
+use Mpdf\Mpdf;
 use Nette\Application\UI\Control;
 use Nette\Application\UI\ITemplate;
-use mPDF;
 
 /**
  * Eciovni - plugin for Nette Framework for generating invoices using mPDF library.
@@ -55,7 +53,7 @@ class Eciovni extends Control {
      * @param string $dest
      * @return string|NULL
      */
-    public function exportToPdf(mPDF $mpdf, $name = NULL, $dest = NULL) {
+    public function exportToPdf(Mpdf $mpdf, $name = NULL, $dest = NULL) {
         $this->generate($this->template);
         $mpdf->WriteHTML((string) $this->template);
 
