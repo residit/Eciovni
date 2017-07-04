@@ -22,7 +22,7 @@ interface Participant {
      * Sets the street of participant.
      *
      * @param string $street
-     * @return void
+     * @return string
      */
     public function getStreet();
 
