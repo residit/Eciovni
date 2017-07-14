@@ -3,8 +3,10 @@
 namespace OndrejBrejla\Eciovni;
 
 use Mpdf\Mpdf;
-use Nette\Application\UI\Control;
+use Nette\Application\LinkGenerator;
 use Nette\Application\UI\ITemplate;
+use Nette\Application\UI\ITemplateFactory;
+use Nette\Bridges\ApplicationLatte\Template;
 
 /**
  * Eciovni - plugin for Nette Framework for generating invoices using mPDF library.
@@ -13,28 +15,28 @@ use Nette\Application\UI\ITemplate;
  * @license    New BSD License
  * @link       http://github.com/OndrejBrejla/Eciovni
  */
-class Eciovni extends Control {
+class Eciovni
+{
 
     /** @var Data */
     private $data = NULL;
 
+    /** @var Template */
+    private $template;
+
     /** @var string */
     private $templatePath;
 
-    /**
-     * Initializes new Invoice.
-     *
-     * @param Data $data
-     */
-    public function __construct(Data $data = NULL) {
-    	parent::__construct();
-
-        if ($data !== NULL) {
+	public function __construct(Data $data = NULL, ITemplateFactory $templateFactory, LinkGenerator $linkGenerator)
+	{
+		if ($data !== NULL) {
             $this->setData($data);
         }
 
         $this->templatePath = __DIR__ . '/Eciovni.latte';
-    }
+		$this->template = $templateFactory->createTemplate();
+		$this->template->getLatte()->addProvider('uiControl', $linkGenerator);
+	}
 
     /**
      * Setter for path to template
@@ -118,11 +120,8 @@ class Eciovni extends Control {
 
     /**
      * Generates the invoice to the defined template.
-     *
-     * @param ITemplate $template
-     * @return void
      */
-    private function generate(ITemplate $template) {
+    private function generate(Template $template) {
         $template->setFile($this->templatePath);
         $template->getLatte()->addFilter('round', function($value, $precision = 2) {
             return number_format(round($value, $precision), $precision, ',', '');
