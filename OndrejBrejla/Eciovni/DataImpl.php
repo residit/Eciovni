@@ -18,6 +18,9 @@ class DataImpl implements Data
     private $title;
 
     /** @var string */
+    private $caption;
+
+    /** @var string */
     private $id;
 
     /** @var Participant */
@@ -49,6 +52,7 @@ class DataImpl implements Data
 
     public function __construct(DataBuilder $dataBuilder) {
         $this->title = $dataBuilder->getTitle();
+        $this->caption = $dataBuilder->getCaption();
         $this->id = $dataBuilder->getId();
         $this->supplier = $dataBuilder->getSupplier();
         $this->customer = $dataBuilder->getCustomer();
@@ -70,7 +74,15 @@ class DataImpl implements Data
         return $this->title;
     }
 
-    /**
+	/**
+	 * @return string|null
+	 */
+	public function getCaption()
+	{
+		return $this->caption;
+	}
+
+	/**
      * Returns the invoice id.
      *
      * @return string

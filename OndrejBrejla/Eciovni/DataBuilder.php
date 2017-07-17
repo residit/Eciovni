@@ -17,6 +17,9 @@ class DataBuilder
     /** @var string */
     private $title;
 
+	/** @var string */
+	private $caption;
+
     /** @var string */
     private $id;
 
@@ -56,6 +59,19 @@ class DataBuilder
         $this->dateOfIssuance = $dateOfIssuance;
         $this->addItems($items);
     }
+
+	/**
+	 * @return string|null
+	 */
+	public function getCaption()
+	{
+		return $this->caption;
+	}
+
+	public function setCaption(string $caption)
+	{
+		$this->caption = $caption;
+	}
 
     /**
      * Adds array of items to the invoice.

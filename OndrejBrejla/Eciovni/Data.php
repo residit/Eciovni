@@ -18,6 +18,11 @@ interface Data {
      */
     public function getTitle();
 
+	/**
+	 * @return string
+	 */
+    public function getCaption();
+
     /**
      * Returns the invoice id.
      *
