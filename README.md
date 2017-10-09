@@ -19,7 +19,7 @@ Edit composer.json.
     "require": {
         ...
         "mpdf/mpdf": "^6.1",
-        "ondrejbrejla/eciovni": "v2.1b"
+        "ondrejbrejla/eciovni": "v2.2"
 ```
 
 For install all dopendecies just run
