@@ -34,7 +34,7 @@ composer update
 
 a) Create service class and inject templateFactory and linkGenerator
 
-'''
+```
 <?php
 
 namespace App\Model\Util;
@@ -65,7 +65,7 @@ class InvoiceFactory
     }
     
 }
-'''
+```
 
 b) Register service @config.neon
 ```
