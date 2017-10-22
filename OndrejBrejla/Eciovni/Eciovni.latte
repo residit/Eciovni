@@ -25,6 +25,9 @@
  * @param    string                $specificSymbol
  * @param    string                $constantSymbol
  *
+ * @param    string                $signatureText
+ * @param    string                $signatureImgSrc
+ * 
  * @param    string                $customerName
  * @param    string                $customerStreet
  * @param    string                $customerHouseNumber
@@ -205,8 +208,11 @@
     </div>
 
     <div style="text-align: right; padding-right: 100px;">
-        <div style="font-weight: bold;">Vystavil, razítko, podpis:</div>
-        <img src="" alt="Razitko s podpisem" />
+        {if !$signatureImgSrc}
+            <p style="color: #1A5DAC; font-style: italic;">{$signatureText}</p>
+        {else}
+            <img src="{$signatureImgSrc}" alt="Razitko s podpisem" />
+        {/if}
     </div>
 </div>
 </body>

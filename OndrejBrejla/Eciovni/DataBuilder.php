@@ -17,8 +17,14 @@ class DataBuilder
     /** @var string */
     private $title;
 
-	/** @var string */
-	private $caption;
+    /** @var string */
+    private $caption;
+    
+    /** @var string */
+    private $signatureText;
+    
+    /** @var string */
+    private $signatureImgSrc;
 
     /** @var string */
     private $id;
@@ -46,7 +52,7 @@ class DataBuilder
 
     /** @var DateTime */
     private $dateOfVatRevenueRecognition;
-
+    
     /** @var Item[] */
     private $items = array();
 
@@ -60,19 +66,39 @@ class DataBuilder
         $this->addItems($items);
     }
 
-	/**
-	 * @return string|null
-	 */
-	public function getCaption()
-	{
-		return $this->caption;
-	}
+    /**
+     * @return string|null
+     */
+    public function getCaption() {
+        return $this->caption;
+    }
 
-	public function setCaption(string $caption)
-	{
-		$this->caption = $caption;
-	}
+    public function setCaption(string $caption) {
+        $this->caption = $caption;
+    }
+    
+    /**
+     * @return string|null
+     */
+    public function getSignatureText() {
+        return $this->signatureText;
+    }
+    
+    public function setSignatureText(string $signatureText) {
+        $this->signatureText = $signatureText;
+    }
+    
+    /**
+     * @return string|null
+     */
+    public function getSignatureImgSrc() {
+        return $this->signatureImgSrc;
+    }    
 
+    public function setSignatureImgSrc(string $signatureImgSrc) {
+        $this->signatureImgSrc = $signatureImgSrc;
+    }
+    
     /**
      * Adds array of items to the invoice.
      *

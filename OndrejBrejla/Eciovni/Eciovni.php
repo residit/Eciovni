@@ -129,6 +129,7 @@ class Eciovni
 
         $template->title = $this->data->getTitle();
         $template->caption = (string) $this->data->getCaption();
+        $template->signatureText = (string) $this->data->getSignatureText();
         $template->id = $this->data->getId();
         $template->items = $this->data->getItems();
         $this->generateSupplier($template);

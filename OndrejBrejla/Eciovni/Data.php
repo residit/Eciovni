@@ -18,10 +18,24 @@ interface Data {
      */
     public function getTitle();
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getCaption();
+    
+    /**
+     * Signature text
+     * 
+     * @return string
+     */
+    public function getSignatureText();
+    
+    /**
+     * Signature image
+     * 
+     * @return string
+     */
+    public function getSignatureImgSrc();
 
     /**
      * Returns the invoice id.
@@ -95,5 +109,5 @@ interface Data {
      * @return Item[]
      */
     public function getItems();
-
+    
 }
