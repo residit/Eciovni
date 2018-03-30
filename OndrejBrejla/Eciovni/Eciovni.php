@@ -20,6 +20,8 @@ class Eciovni
 
     /** @var Data */
     private $data = NULL;
+	
+	private $custom_data = NULL;
 
     /** @var Template */
     private $template;
@@ -117,6 +119,10 @@ class Eciovni
             throw new IllegalStateException('Data have already been set!');
         }
     }
+	
+	public function setCustomData($data) {
+		$this->custom_data = $data;	
+	}
 
     /**
      * Generates the invoice to the defined template.
@@ -132,6 +138,7 @@ class Eciovni
         $template->signatureText = (string) $this->data->getSignatureText();
         $template->id = $this->data->getId();
         $template->items = $this->data->getItems();
+	    $template->custom_data = $this->custom_data;
         $this->generateSupplier($template);
         $this->generateCustomer($template);
         $this->generateDates($template);
