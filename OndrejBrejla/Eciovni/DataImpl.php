@@ -60,6 +60,7 @@ class DataImpl implements Data
         $this->title = $dataBuilder->getTitle();
         $this->caption = $dataBuilder->getCaption();
         $this->signatureText = $dataBuilder->getSignatureText();
+		$this->signatureImgSrc = $dataBuilder->getSignatureImgSrc();
         $this->id = $dataBuilder->getId();
         $this->supplier = $dataBuilder->getSupplier();
         $this->customer = $dataBuilder->getCustomer();
