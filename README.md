@@ -1,7 +1,7 @@
 # Eciovni
 Component for generating invoices using Nette Framework and mPDF library.
 
-For of fork of original library. I create this fork to test if it works with PHP 7.0 and mPDF 6.1.
+For of fork of original library. We created this fork for make more variably library.
 
 # Install (with composer):
 
@@ -19,7 +19,7 @@ Edit composer.json.
     "require": {
         ...
         "mpdf/mpdf": "^6.1",
-        "ondrejbrejla/eciovni": "v2.2"
+        "ondrejbrejla/eciovni": "v2.3"
 ```
 
 For install all dopendecies just run
