@@ -11,7 +11,7 @@ Edit composer.json.
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/lamagoci/Eciovni"
+            "url": "https://github.com/residit/Eciovni"
         }
         
     ...
