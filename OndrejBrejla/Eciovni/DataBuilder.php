@@ -52,6 +52,24 @@ class DataBuilder {
   /** @var string */
   private $dateOfVatRevenueRecognition;
 
+  /** @var string */
+  private $bankAccount;
+
+  /** @var string */
+  private $bankIban;
+
+  /** @var string */
+  private $bankName;
+
+  /** @var string */
+  private $bankSwift;
+
+  /** @var string */
+  private $paymentMethod;
+
+  /** @var string */
+  private $supplierText;
+
   /** @var Item[] */
   private $items = array();
 
@@ -257,6 +275,60 @@ class DataBuilder {
   }
 
   /**
+   * Returns the bank account
+   * 
+   * @return string
+   */
+  public function getBankAccount(): string {
+    return $this->bankAccount;
+  }
+
+  /**
+   * Returns the bank IBAN
+   * 
+   * @return string
+   */
+  public function getBankIban(): string {
+    return $this->bankIban;
+  }
+
+  /**
+   * Return the bank name
+   * 
+   * @return string
+   */
+  public function getBankName(): string {
+    return $this->bankName;
+  }
+
+  /**
+   * Returns the bank SWIFT
+   * 
+   * @return string
+   */
+  public function getBankSwift(): string {
+    return $this->bankSwift;
+  }
+
+  /**
+   * Returns the payment method
+   * 
+   * @return string
+   */
+  public function getPaymentMethod(): string {
+    return $this->paymentMethod;
+  }
+
+  /**
+   * Return the supplier text
+   * 
+   * @return string
+   */
+  public function getSupplierText(): string {
+    return $this->supplierText;
+  }
+
+  /**
    * Returns the array of items.
    *
    * @return Item[]
@@ -272,6 +344,72 @@ class DataBuilder {
    */
   public function build() {
     return new DataImpl($this);
+  }
+
+  /**
+   * Sets the bank account
+   * 
+   * @param type $bankAccount
+   * @return DataBuilder
+   */
+  public function setBankAccount($bankAccount) {
+    $this->bankAccount = $bankAccount;
+    return $this;
+  }
+
+  /**
+   * Sets the bank IBAN
+   * 
+   * @param string $bankIban
+   * @return DataBuilder
+   */
+  public function setBankIban($bankIban) {
+    $this->bankIban = $bankIban;
+    return $this;
+  }
+
+  /**
+   * Sets the bank name
+   * 
+   * @param string $bankName
+   * @return DataBuilder
+   */
+  public function setBankName($bankName) {
+    $this->bankName = $bankName;
+    return $this;
+  }
+
+  /**
+   * Sets the bank swift
+   * 
+   * @param string $bankSwift
+   * @return DataBuilder
+   */
+  public function setBankSwift($bankSwift) {
+    $this->bankSwift = $bankSwift;
+    return $this;
+  }
+
+  /**
+   * Sets the payment method
+   * 
+   * @param string $paymentMethod
+   * @return DataBuilder
+   */
+  public function setPaymentMethod($paymentMethod) {
+    $this->paymentMethod = $paymentMethod;
+    return $this;
+  }
+
+  /**
+   * Sets the supplier text
+   * 
+   * @param string $supplierText
+   * @return DataBuilder
+   */
+  public function setSupplierText($supplierText) {
+    $this->supplierText = $supplierText;
+    return $this;
   }
 
 }

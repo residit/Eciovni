@@ -53,12 +53,30 @@ class DataImpl implements Data {
   /** @var Item[] */
   private $items = array();
 
+  /** @var string */
+  private $bankAccount;
+
+  /** @var string */
+  private $bankIban;
+
+  /** @var string */
+  private $bankName;
+
+  /** @var string */
+  private $bankSwift;
+
+  /** @var string */
+  private $paymentMethod;
+
+  /** @var string */
+  private $supplierText;
+
   public function __construct(DataBuilder $dataBuilder) {
     $this->title = $dataBuilder->getTitle();
     $this->caption = $dataBuilder->getCaption();
     $this->signatureText = $dataBuilder->getSignatureText();
     $this->signatureImgSrc = $dataBuilder->getSignatureImgSrc();
-    $this->id = $dataBuilder->getId();
+    $this->bankAccount = $this->bankIban = $this->bankName = $this->bankSwift = $this->paymentMethod = $this->supplierText = $this->id = $dataBuilder->getId();
     $this->supplier = $dataBuilder->getSupplier();
     $this->customer = $dataBuilder->getCustomer();
     $this->variableSymbol = $dataBuilder->getVariableSymbol();
@@ -190,6 +208,60 @@ class DataImpl implements Data {
    */
   public function getItems() {
     return $this->items;
+  }
+
+  /**
+   * Returns the bank account
+   * 
+   * @return string
+   */
+  public function getBankAccount(): string {
+    return $this->bankAccount;
+  }
+
+  /**
+   * Returns the bank IBAN
+   * 
+   * @return string
+   */
+  public function getBankIban(): string {
+    return $this->bankIban;
+  }
+
+  /**
+   * Return the bank name
+   * 
+   * @return string
+   */
+  public function getBankName(): string {
+    return $this->bankName;
+  }
+
+  /**
+   * Returns the bank SWIFT
+   * 
+   * @return string
+   */
+  public function getBankSwift(): string {
+    return $this->bankSwift;
+  }
+
+  /**
+   * Returns the payment method
+   * 
+   * @return string
+   */
+  public function getPaymentMethod(): string {
+    return $this->paymentMethod;
+  }
+
+  /**
+   * Return the supplier text
+   * 
+   * @return string
+   */
+  public function getSupplierText(): string {
+    return $this->supplierText;
   }
 
 }

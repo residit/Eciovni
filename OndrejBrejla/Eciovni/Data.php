@@ -11,101 +11,142 @@ namespace OndrejBrejla\Eciovni;
  */
 interface Data {
 
-    /**
-     * Returns the invoice title.
-     *
-     * @return string
-     */
-    public function getTitle();
+  /**
+   * Returns the invoice title.
+   *
+   * @return string
+   */
+  public function getTitle();
 
-    /**
-     * @return string
-     */
-    public function getCaption();
-    
-    /**
-     * Signature text
-     * 
-     * @return string
-     */
-    public function getSignatureText();
-    
-    /**
-     * Signature image
-     * 
-     * @return string
-     */
-    public function getSignatureImgSrc();
+  /**
+   * @return string
+   */
+  public function getCaption();
 
-    /**
-     * Returns the invoice id.
-     *
-     * @return string
-     */
-    public function getId();
+  /**
+   * Signature text
+   * 
+   * @return string
+   */
+  public function getSignatureText();
 
-    /**
-     * Returns the invoice supplier.
-     *
-     * @return Participant
-     */
-    public function getSupplier();
+  /**
+   * Signature image
+   * 
+   * @return string
+   */
+  public function getSignatureImgSrc();
 
-    /**
-     * Returns the invoice customer.
-     *
-     * @return Participant
-     */
-    public function getCustomer();
+  /**
+   * Returns the invoice id.
+   *
+   * @return string
+   */
+  public function getId();
 
-    /**
-     * Returns the variable symbol.
-     *
-     * @return int
-     */
-    public function getVariableSymbol();
+  /**
+   * Returns the invoice supplier.
+   *
+   * @return Participant
+   */
+  public function getSupplier();
 
-    /**
-     * Returns the constant symbol.
-     *
-     * @return int
-     */
-    public function getConstantSymbol();
+  /**
+   * Returns the invoice customer.
+   *
+   * @return Participant
+   */
+  public function getCustomer();
 
-    /**
-     * Returns the specific symbol.
-     *
-     * @return int
-     */
-    public function getSpecificSymbol();
+  /**
+   * Returns the variable symbol.
+   *
+   * @return int
+   */
+  public function getVariableSymbol();
 
-    /**
-     * Returns the expiration date in defined format.
-     *
-     * @param string $format
-     * @return string
-     */
-    public function getExpirationDate();
+  /**
+   * Returns the constant symbol.
+   *
+   * @return int
+   */
+  public function getConstantSymbol();
 
-    /**
-     * Returns the date of issuance in defined format.
-     *
-     * @return string
-     */
-    public function getDateOfIssuance();
+  /**
+   * Returns the specific symbol.
+   *
+   * @return int
+   */
+  public function getSpecificSymbol();
 
-    /**
-     * Returns the date of VAT revenue recognition in defined format.
-     *
-     * @return string
-     */
-    public function getDateOfVatRevenueRecognition();
+  /**
+   * Returns the expiration date.
+   *
+   * @param string $format
+   * @return string
+   */
+  public function getExpirationDate();
 
-    /**
-     * Returns the array of items.
-     *
-     * @return Item[]
-     */
-    public function getItems();
-    
+  /**
+   * Returns the date of issuance.
+   *
+   * @return string
+   */
+  public function getDateOfIssuance();
+
+  /**
+   * Returns the date of VAT revenue recognition.
+   *
+   * @return string
+   */
+  public function getDateOfVatRevenueRecognition();
+
+  /**
+   * Returns the array of items.
+   *
+   * @return Item[]
+   */
+  public function getItems();
+
+  /**
+   * Returns the payment metthod
+   * 
+   * @return string
+   */
+  public function getPaymentMethod();
+
+  /**
+   * Returns the bank name
+   * 
+   * @return string
+   */
+  public function getBankName();
+
+  /**
+   * Returns the bank account
+   * 
+   * @return string
+   */
+  public function getBankAccount();
+
+  /**
+   * Returns the bank IBAN
+   * 
+   * @return string
+   */
+  public function getBankIban();
+
+  /**
+   * Returns the bank SWIFT
+   * 
+   * @return string
+   */
+  public function getBankSwift();
+
+  /**
+   * Returns the supplier text
+   * 
+   * @return string
+   */
+  public function getSupplierText();
 }
