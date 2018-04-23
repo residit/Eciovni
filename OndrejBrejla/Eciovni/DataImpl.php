@@ -11,192 +11,190 @@ use DateTime;
  * @license    New BSD License
  * @link       http://github.com/OndrejBrejla/Eciovni
  */
-class DataImpl implements Data
-{
+class DataImpl implements Data {
 
-    /** @var string */
-    private $title;
+  /** @var string */
+  private $title;
 
-    /** @var string */
-    private $caption;
+  /** @var string */
+  private $caption;
 
-    /** @var string */
-    private $signatureText;
+  /** @var string */
+  private $signatureText;
 
-    /** @var string */
-    private $signatureImgSrc;
-    
-    /** @var string */
-    private $id;
+  /** @var string */
+  private $signatureImgSrc;
 
-    /** @var Participant */
-    private $supplier;
+  /** @var string */
+  private $id;
 
-    /** @var Participant */
-    private $customer;
+  /** @var Participant */
+  private $supplier;
 
-    /** @var int */
-    private $variableSymbol = 0;
+  /** @var Participant */
+  private $customer;
 
-    /** @var int */
-    private $constantSymbol = 0;
+  /** @var int */
+  private $variableSymbol = 0;
 
-    /** @var int */
-    private $specificSymbol = 0;
+  /** @var int */
+  private $constantSymbol = 0;
 
-    /** @var DateTime */
-    private $expirationDate;
+  /** @var int */
+  private $specificSymbol = 0;
 
-    /** @var DateTime */
-    private $dateOfIssuance;
+  /** @var DateTime */
+  private $expirationDate;
 
-    /** @var DateTime */
-    private $dateOfVatRevenueRecognition;
+  /** @var DateTime */
+  private $dateOfIssuance;
 
-    /** @var Item[] */
-    private $items = array();
+  /** @var DateTime */
+  private $dateOfVatRevenueRecognition;
 
-    public function __construct(DataBuilder $dataBuilder) {
-        $this->title = $dataBuilder->getTitle();
-        $this->caption = $dataBuilder->getCaption();
-        $this->signatureText = $dataBuilder->getSignatureText();
-		$this->signatureImgSrc = $dataBuilder->getSignatureImgSrc();
-        $this->id = $dataBuilder->getId();
-        $this->supplier = $dataBuilder->getSupplier();
-        $this->customer = $dataBuilder->getCustomer();
-        $this->variableSymbol = $dataBuilder->getVariableSymbol();
-        $this->constantSymbol = $dataBuilder->getConstantSymbol();
-        $this->specificSymbol = $dataBuilder->getSpecificSymbol();
-        $this->expirationDate = $dataBuilder->getExpirationDate();
-        $this->dateOfIssuance = $dataBuilder->getDateOfIssuance();
-        $this->dateOfVatRevenueRecognition = $dataBuilder->getDateOfVatRevenueRecognition();
-        $this->items = $dataBuilder->getItems();
-    }
+  /** @var Item[] */
+  private $items = array();
 
-    /**
-     * Returns the invoice title.
-     *
-     * @return string
-     */
-    public function getTitle() {
-        return $this->title;
-    }
+  public function __construct(DataBuilder $dataBuilder) {
+    $this->title = $dataBuilder->getTitle();
+    $this->caption = $dataBuilder->getCaption();
+    $this->signatureText = $dataBuilder->getSignatureText();
+    $this->signatureImgSrc = $dataBuilder->getSignatureImgSrc();
+    $this->id = $dataBuilder->getId();
+    $this->supplier = $dataBuilder->getSupplier();
+    $this->customer = $dataBuilder->getCustomer();
+    $this->variableSymbol = $dataBuilder->getVariableSymbol();
+    $this->constantSymbol = $dataBuilder->getConstantSymbol();
+    $this->specificSymbol = $dataBuilder->getSpecificSymbol();
+    $this->expirationDate = $dataBuilder->getExpirationDate();
+    $this->dateOfIssuance = $dataBuilder->getDateOfIssuance();
+    $this->dateOfVatRevenueRecognition = $dataBuilder->getDateOfVatRevenueRecognition();
+    $this->items = $dataBuilder->getItems();
+  }
 
-    /**
-     * @return string|null
-     */
-    public function getCaption(){
-        return $this->caption;
-    }
+  /**
+   * Returns the invoice title.
+   *
+   * @return string
+   */
+  public function getTitle() {
+    return $this->title;
+  }
 
-    /**
-     * @return string|null
-     */
-    public function getSignatureText(){
-        return $this->signatureText;
-    }
-    
-    /**
-     * Signature image
-     * 
-     * @return string
-     */
-    public function getSignatureImgSrc() {
-        return $this->signatureImgSrc;
-    }
-    
-    
-    /**
-     * Returns the invoice id.
-     *
-     * @return string
-     */
-    public function getId() {
-        return $this->id;
-    }
+  /**
+   * @return string|null
+   */
+  public function getCaption() {
+    return $this->caption;
+  }
 
-    /**
-     * Returns the invoice supplier.
-     *
-     * @return Participant
-     */
-    public function getSupplier() {
-        return $this->supplier;
-    }
+  /**
+   * @return string|null
+   */
+  public function getSignatureText() {
+    return $this->signatureText;
+  }
 
-    /**
-     * Returns the invoice customer.
-     *
-     * @return Participant
-     */
-    public function getCustomer() {
-        return $this->customer;
-    }
+  /**
+   * Signature image
+   * 
+   * @return string
+   */
+  public function getSignatureImgSrc() {
+    return $this->signatureImgSrc;
+  }
 
-    /**
-     * Returns the variable symbol.
-     *
-     * @return int
-     */
-    public function getVariableSymbol() {
-        return $this->variableSymbol;
-    }
+  /**
+   * Returns the invoice id.
+   *
+   * @return string
+   */
+  public function getId() {
+    return $this->id;
+  }
 
-    /**
-     * Returns the constant symbol.
-     *
-     * @return int
-     */
-    public function getConstantSymbol() {
-        return $this->constantSymbol;
-    }
+  /**
+   * Returns the invoice supplier.
+   *
+   * @return Participant
+   */
+  public function getSupplier() {
+    return $this->supplier;
+  }
 
-    /**
-     * Returns the specific symbol.
-     *
-     * @return int
-     */
-    public function getSpecificSymbol() {
-        return $this->specificSymbol;
-    }
+  /**
+   * Returns the invoice customer.
+   *
+   * @return Participant
+   */
+  public function getCustomer() {
+    return $this->customer;
+  }
 
-    /**
-     * Returns the expiration date in defined format.
-     *
-     * @param string $format
-     * @return string
-     */
-    public function getExpirationDate($format = 'd.m.Y') {
-        return $this->expirationDate->format($format);
-    }
+  /**
+   * Returns the variable symbol.
+   *
+   * @return int
+   */
+  public function getVariableSymbol() {
+    return $this->variableSymbol;
+  }
 
-    /**
-     * Returns the date of issuance in defined format.
-     *
-     * @param string $format
-     * @return string
-     */
-    public function getDateOfIssuance($format = 'd.m.Y') {
-        return $this->dateOfIssuance->format($format);
-    }
+  /**
+   * Returns the constant symbol.
+   *
+   * @return int
+   */
+  public function getConstantSymbol() {
+    return $this->constantSymbol;
+  }
 
-    /**
-     * Returns the date of VAT revenue recognition in defined format.
-     *
-     * @param string $format
-     * @return string
-     */
-    public function getDateOfVatRevenueRecognition($format = 'd.m.Y') {
-        return $this->dateOfVatRevenueRecognition === NULL ? '' : $this->dateOfVatRevenueRecognition->format($format);
-    }
+  /**
+   * Returns the specific symbol.
+   *
+   * @return int
+   */
+  public function getSpecificSymbol() {
+    return $this->specificSymbol;
+  }
 
-    /**
-     * Returns the array of items.
-     *
-     * @return Item[]
-     */
-    public function getItems() {
-        return $this->items;
-    }
+  /**
+   * Returns the expiration date in defined format.
+   *
+   * @param string $format
+   * @return string
+   */
+  public function getExpirationDate($format = 'd.m.Y') {
+    return $this->expirationDate->format($format);
+  }
+
+  /**
+   * Returns the date of issuance in defined format.
+   *
+   * @param string $format
+   * @return string
+   */
+  public function getDateOfIssuance($format = 'd.m.Y') {
+    return $this->dateOfIssuance->format($format);
+  }
+
+  /**
+   * Returns the date of VAT revenue recognition in defined format.
+   *
+   * @param string $format
+   * @return string
+   */
+  public function getDateOfVatRevenueRecognition($format = 'd.m.Y') {
+    return $this->dateOfVatRevenueRecognition === NULL ? '' : $this->dateOfVatRevenueRecognition->format($format);
+  }
+
+  /**
+   * Returns the array of items.
+   *
+   * @return Item[]
+   */
+  public function getItems() {
+    return $this->items;
+  }
 
 }
