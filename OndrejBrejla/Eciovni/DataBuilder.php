@@ -43,19 +43,19 @@ class DataBuilder {
   /** @var int */
   private $specificSymbol = 0;
 
-  /** @var DateTime */
+  /** @var string */
   private $expirationDate;
 
-  /** @var DateTime */
+  /** @var string */
   private $dateOfIssuance;
 
-  /** @var DateTime */
+  /** @var string */
   private $dateOfVatRevenueRecognition;
 
   /** @var Item[] */
   private $items = array();
 
-  public function __construct($id, $title, Participant $supplier, Participant $customer, DateTime $expirationDate, DateTime $dateOfIssuance, array $items) {
+  public function __construct($id, $title, Participant $supplier, Participant $customer, $expirationDate, $dateOfIssuance, array $items) {
     $this->id = $id;
     $this->title = $title;
     $this->supplier = $supplier;
@@ -158,10 +158,10 @@ class DataBuilder {
   /**
    * Sets the date of VAT revenue recognition.
    *
-   * @param DateTime $dateOfTaxablePayment
+   * @param string $dateOfTaxablePayment
    * @return DataBuilder
    */
-  public function setDateOfVatRevenueRecognition(DateTime $dateOfTaxablePayment) {
+  public function setDateOfVatRevenueRecognition($dateOfTaxablePayment) {
     $this->dateOfVatRevenueRecognition = $dateOfTaxablePayment;
     return $this;
   }

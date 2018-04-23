@@ -2,8 +2,6 @@
 
 namespace OndrejBrejla\Eciovni;
 
-use DateTime;
-
 /**
  * DataImpl - part of Eciovni plugin for Nette Framework.
  *
@@ -43,13 +41,13 @@ class DataImpl implements Data {
   /** @var int */
   private $specificSymbol = 0;
 
-  /** @var DateTime */
+  /** @var string */
   private $expirationDate;
 
-  /** @var DateTime */
+  /** @var string */
   private $dateOfIssuance;
 
-  /** @var DateTime */
+  /** @var string */
   private $dateOfVatRevenueRecognition;
 
   /** @var Item[] */
@@ -161,31 +159,28 @@ class DataImpl implements Data {
   /**
    * Returns the expiration date in defined format.
    *
-   * @param string $format
    * @return string
    */
-  public function getExpirationDate($format = 'd.m.Y') {
-    return $this->expirationDate->format($format);
+  public function getExpirationDate() {
+    return $this->expirationDate;
   }
 
   /**
    * Returns the date of issuance in defined format.
    *
-   * @param string $format
    * @return string
    */
-  public function getDateOfIssuance($format = 'd.m.Y') {
-    return $this->dateOfIssuance->format($format);
+  public function getDateOfIssuance() {
+    return $this->dateOfIssuance;
   }
 
   /**
    * Returns the date of VAT revenue recognition in defined format.
    *
-   * @param string $format
    * @return string
    */
-  public function getDateOfVatRevenueRecognition($format = 'd.m.Y') {
-    return $this->dateOfVatRevenueRecognition === NULL ? '' : $this->dateOfVatRevenueRecognition->format($format);
+  public function getDateOfVatRevenueRecognition() {
+    return $this->dateOfVatRevenueRecognition;
   }
 
   /**

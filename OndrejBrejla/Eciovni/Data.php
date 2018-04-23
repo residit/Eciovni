@@ -85,23 +85,21 @@ interface Data {
      * @param string $format
      * @return string
      */
-    public function getExpirationDate($format = 'd.m.Y');
+    public function getExpirationDate();
 
     /**
      * Returns the date of issuance in defined format.
      *
-     * @param string $format
      * @return string
      */
-    public function getDateOfIssuance($format = 'd.m.Y');
+    public function getDateOfIssuance();
 
     /**
      * Returns the date of VAT revenue recognition in defined format.
      *
-     * @param string $format
      * @return string
      */
-    public function getDateOfVatRevenueRecognition($format = 'd.m.Y');
+    public function getDateOfVatRevenueRecognition();
 
     /**
      * Returns the array of items.
