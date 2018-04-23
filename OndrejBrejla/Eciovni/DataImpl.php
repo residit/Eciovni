@@ -76,7 +76,13 @@ class DataImpl implements Data {
     $this->caption = $dataBuilder->getCaption();
     $this->signatureText = $dataBuilder->getSignatureText();
     $this->signatureImgSrc = $dataBuilder->getSignatureImgSrc();
-    $this->bankAccount = $this->bankIban = $this->bankName = $this->bankSwift = $this->paymentMethod = $this->supplierText = $this->id = $dataBuilder->getId();
+    $this->bankAccount = $dataBuilder->getBankAccount();
+    $this->bankName = $dataBuilder->getBankName();
+    $this->bankIban = $dataBuilder->getBankIban();
+    $this->bankSwift = $dataBuilder->getBankSwift();
+    $this->paymentMethod = $dataBuilder->getPaymentMethod();
+    $this->supplierText = $dataBuilder->getSupplierText();
+    $this->id = $dataBuilder->getId();
     $this->supplier = $dataBuilder->getSupplier();
     $this->customer = $dataBuilder->getCustomer();
     $this->variableSymbol = $dataBuilder->getVariableSymbol();
