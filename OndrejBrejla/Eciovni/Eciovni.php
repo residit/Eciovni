@@ -135,6 +135,7 @@ class Eciovni {
     $template->signatureImgSrc = (string) $this->data->getSignatureImgSrc();
 
     $template->supplierText = $this->data->getSupplierText();
+    $template->supplierLogoImgSrc = $this->data->getSupplierLogoImgSrc();
     $template->paymentMethod = $this->data->getPaymentMethod();
     $template->bankName = $this->data->getBankName();
     $template->bankAccount = $this->data->getBankAccount();
