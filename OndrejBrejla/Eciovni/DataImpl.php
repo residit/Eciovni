@@ -71,6 +71,9 @@ class DataImpl implements Data {
   /** @var string */
   private $supplierText;
 
+  /** @var string */
+  private $supplierLogoImgSrc;
+
   public function __construct(DataBuilder $dataBuilder) {
     $this->title = $dataBuilder->getTitle();
     $this->caption = $dataBuilder->getCaption();
@@ -82,6 +85,7 @@ class DataImpl implements Data {
     $this->bankSwift = $dataBuilder->getBankSwift();
     $this->paymentMethod = $dataBuilder->getPaymentMethod();
     $this->supplierText = $dataBuilder->getSupplierText();
+    $this->supplierLogoImgSrc = $dataBuilder->getSupplierLogoImgSrc();
     $this->id = $dataBuilder->getId();
     $this->supplier = $dataBuilder->getSupplier();
     $this->customer = $dataBuilder->getCustomer();
@@ -268,6 +272,13 @@ class DataImpl implements Data {
    */
   public function getSupplierText(): string {
     return $this->supplierText;
+  }
+
+  /**
+   * Return the supplier logo image 
+   */
+  public function getSupplierLogoImgSrc(): string {
+    return $this->supplierLogoImgSrc;
   }
 
 }

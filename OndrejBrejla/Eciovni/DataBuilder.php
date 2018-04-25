@@ -70,6 +70,9 @@ class DataBuilder {
   /** @var string */
   private $supplierText;
 
+  /** @var string */
+  private $supplierLogoImgSrc;
+
   /** @var Item[] */
   private $items = array();
 
@@ -329,6 +332,15 @@ class DataBuilder {
   }
 
   /**
+   * Return the supplier logo image 
+   *    
+   * @return string
+   */
+  public function getSupplierLogoImgSrc(): string {
+    return $this->supplierLogoImgSrc;
+  }
+
+  /**
    * Returns the array of items.
    *
    * @return Item[]
@@ -409,6 +421,16 @@ class DataBuilder {
    */
   public function setSupplierText($supplierText) {
     $this->supplierText = $supplierText;
+    return $this;
+  }
+
+  /**
+   * Sets the supplier logo image 
+   * @param string $supplierLogoImgSrc   
+   * @return DataBuilder
+   */
+  public function setSupplierLogoImgSrc($supplierLogoImgSrc): string {
+    $this->supplierLogoImgSrc = $this->$supplierLogoImgSrc;
     return $this;
   }
 

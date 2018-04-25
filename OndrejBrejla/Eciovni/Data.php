@@ -36,6 +36,13 @@ interface Data {
    * @return string
    */
   public function getSignatureImgSrc();
+  
+  /**
+   * Supplier logo image
+   * 
+   * @return string
+   */
+  public function getSupplierLogoImgSrc();
 
   /**
    * Returns the invoice id.
