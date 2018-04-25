@@ -429,7 +429,7 @@ class DataBuilder {
    * @param string $supplierLogoImgSrc   
    * @return DataBuilder
    */
-  public function setSupplierLogoImgSrc($supplierLogoImgSrc): string {
+  public function setSupplierLogoImgSrc($supplierLogoImgSrc){
     $this->supplierLogoImgSrc = $this->$supplierLogoImgSrc;
     return $this;
   }
