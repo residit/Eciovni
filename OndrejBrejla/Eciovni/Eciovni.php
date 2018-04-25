@@ -46,6 +46,10 @@ class Eciovni {
     $this->templatePath = $templatePath;
   }
 
+  public function setTranslator($translator) {
+    $this->template->setTranslator($translator);
+  }
+
   /**
    * Exports Invoice template via passed mPDF.
    *
@@ -130,7 +134,7 @@ class Eciovni {
 
     $template->title = $this->data->getTitle();
     $template->caption = (string) $this->data->getCaption();
-    
+
     $template->signatureText = (string) $this->data->getSignatureText();
     $template->signatureImgSrc = (string) $this->data->getSignatureImgSrc();
 
