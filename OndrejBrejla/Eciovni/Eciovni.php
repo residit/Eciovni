@@ -58,7 +58,7 @@ class Eciovni {
    * @param string $dest
    * @return string|NULL
    */
-  public function exportToPdf(\mPDF $mpdf, $name = NULL, $dest = NULL) {
+  public function exportToPdf(Mpdf\Mpdf $mpdf, $name = NULL, $dest = NULL) {
     $this->generate($this->template);
     $mpdf->WriteHTML((string) $this->template);
 
