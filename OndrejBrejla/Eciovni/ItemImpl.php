@@ -138,7 +138,7 @@ class ItemImpl implements Item {
     return $this->getUnits() * $this->countTaxedUnitValue();
   }
 
-  function getUnitName(): string {
+  function getUnitName(): ?string {
     return $this->unitName;
   }
 
