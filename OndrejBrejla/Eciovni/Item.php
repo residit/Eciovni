@@ -59,5 +59,8 @@ interface Item {
      * @return double
      */
     public function countFinalValue();
+  
+    public function getUnitName();
 
+    public function getPricePerUnit();
 }
