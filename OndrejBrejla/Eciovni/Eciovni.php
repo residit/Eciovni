@@ -51,26 +51,34 @@ class Eciovni {
   }
 
   /**
-   * Exports Invoice template via passed mPDF.
+   * Render current template into PDF and output/save it via mPDF.
    *
-   * @param mPDF $mpdf
-   * @param string $name
-   * @param string $dest
-   * @return string|NULL
+   * @param Mpdf        $mpdf
+   * @param string|null $name  Full path or file name (depends on $dest)
+   * @param string|bool|null $dest One of Destination::* ('I','D','F','S') or bool (true=DOWNLOAD, false=FILE)
+   * @return string|null       Return value per mPDF docs (e.g., string when 'S')
    */
-  public function exportToPdf(Mpdf $mpdf, $name = NULL, $dest = NULL) {
+  public function exportToPdf(Mpdf $mpdf, $name = null, $dest = null)
+  {
+    // Generate HTML and write it to mPDF
     $this->generate($this->template);
     $mpdf->WriteHTML((string) $this->template);
 
-    $result = NULL;
-    if (($name !== '') && ($dest !== NULL)) {
-      $result = $mpdf->Output($name, $dest);
-    } elseif ($dest !== NULL) {
-      $result = $mpdf->Output('', $dest);
-    } else {
-      $result = $mpdf->Output($name, $dest);
+    // Normalize $dest to a valid mPDF destination (avoid NULL for strtoupper)
+    if (is_bool($dest)) {
+      $dest = $dest ? Destination::DOWNLOAD : Destination::FILE;
+    } elseif ($dest === null) {
+      // If a file name/path is provided, default to saving to file; otherwise inline
+      $dest = ($name !== null && $name !== '') ? Destination::FILE : Destination::INLINE;
     }
-    return $result;
+
+    // Normalize $name: for INLINE/DOWNLOAD it can be empty string
+    if (in_array($dest, [Destination::INLINE, Destination::DOWNLOAD], true) && ($name === null)) {
+      $name = ''; // mPDF expects '' for these modes
+    }
+
+    // Finally call mPDF Output with guaranteed non-null $dest
+    return $mpdf->Output($name, $dest);
   }
 
   /**
