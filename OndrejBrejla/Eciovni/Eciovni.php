@@ -66,14 +66,14 @@ class Eciovni {
 
     // Normalize $dest to a valid mPDF destination (avoid NULL for strtoupper)
     if (is_bool($dest)) {
-      $dest = $dest ? Destination::DOWNLOAD : Destination::FILE;
+      $dest = $dest ? \Mpdf\Output\Destination::DOWNLOAD : \Mpdf\Output\Destination::FILE;
     } elseif ($dest === null) {
       // If a file name/path is provided, default to saving to file; otherwise inline
-      $dest = ($name !== null && $name !== '') ? Destination::FILE : Destination::INLINE;
+      $dest = ($name !== null && $name !== '') ? \Mpdf\Output\Destination::FILE : \Mpdf\Output\Destination::INLINE;
     }
 
     // Normalize $name: for INLINE/DOWNLOAD it can be empty string
-    if (in_array($dest, [Destination::INLINE, Destination::DOWNLOAD], true) && ($name === null)) {
+    if (in_array($dest, [\Mpdf\Output\Destination::INLINE, \Mpdf\Output\Destination::DOWNLOAD], true) && ($name === null)) {
       $name = ''; // mPDF expects '' for these modes
     }
 
